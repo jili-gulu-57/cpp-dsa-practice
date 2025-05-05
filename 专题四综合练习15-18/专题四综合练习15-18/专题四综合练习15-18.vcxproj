@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c5ac105e-87e5-4b40-8491-d93965043a39}</ProjectGuid>
-    <RootNamespace>蓝桥杯刷题字符串拼接</RootNamespace>
+    <ProjectGuid>{1e0f1229-d941-4185-900e-b375d500e178}</ProjectGuid>
+    <RootNamespace>专题四综合练习1518</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
