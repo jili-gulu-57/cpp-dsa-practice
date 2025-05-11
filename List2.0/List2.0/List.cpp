@@ -44,12 +44,12 @@ void ListDestory(ListNode* phead)
 {
 	assert(phead);
 	ListNode* cur = phead->next;
-	while (cur != phead);
+	while (cur != phead)
 	{
 		ListNode* tmp = cur;
+		cur = cur->next;
 		free(tmp);
 		tmp = NULL;
-		cur = cur->next;
 	}
 	free(phead);
 	phead = NULL;
