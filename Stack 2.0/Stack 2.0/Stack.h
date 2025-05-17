@@ -9,7 +9,7 @@ typedef int STDataType;
 typedef struct Stack
 {
 	STDataType* _arr; //数组
-	int top;          //栈顶
+	int top;          //栈顶下标
 	int capacity;     //容量大小
 }ST;
 
