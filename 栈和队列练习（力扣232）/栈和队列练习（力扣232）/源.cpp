@@ -3,6 +3,8 @@
 #include<stack>
 using namespace std;
 
+//已通过
+//注意栈来回倒的话数据的顺序可能会改变，并且再插入数据顺序也会乱，因此倒完一次要再倒。
 class MyQueue {
 public:
     stack<int> s1;
@@ -25,17 +27,32 @@ public:
         }
         tmp = s1.top();
         s1.pop();
+        int tmp2 = 0;
         while (s2.size())
         {
-            tmp = s2.top();
+            tmp2 = s2.top();
             s2.pop();
-            s1.push(tmp);
+            s1.push(tmp2);
         }
         return tmp;
     }
 
     int peek() {
-        return s1.top();
+        int tmp = 0;
+        while (s1.size())
+        {
+            tmp = s1.top();
+            s1.pop();
+            s2.push(tmp);
+        }
+        int tmp2 = 0;
+        while (s2.size())
+        {
+            tmp2 = s2.top();
+            s2.pop();
+            s1.push(tmp2);
+        }
+        return tmp;
     }
 
     bool empty() {
