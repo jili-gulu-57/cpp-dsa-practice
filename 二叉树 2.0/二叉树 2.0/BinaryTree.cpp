@@ -62,22 +62,23 @@ void LevelOrder(BTNode* root)
 //分治思想
 int BinaryTreeSize(BTNode* root)
 {
+	//采用三目表达式，结点为空直接返回，否则递归计算左右子树个数及根结点。
 	return root == NULL ? 0 : BinaryTreeSize(root->leftchild) + BinaryTreeSize(root->rightchild) + 1;
 }
 
-void BinaryTreeSize(BTNode* root,int *psize)
-{
-	//根据遍历求个数
-	if (root == NULL)
-		return ;
-	else
-	{
-		(*psize)++;
-	}
-	BinaryTreeSize(root->leftchild, psize);
-	BinaryTreeSize(root->rightchild, psize);
-	
-}
+//void BinaryTreeSize(BTNode* root,int *psize)
+//{
+//	//根据遍历求个数
+//	if (root == NULL)
+//		return ;
+//	else
+//	{
+//		(*psize)++;
+//	}
+//	BinaryTreeSize(root->leftchild, psize);
+//	BinaryTreeSize(root->rightchild, psize);
+//	
+//}
 
 //求二叉树叶子结点个数
 int BinaryTreeLeafSize(BTNode* root)
