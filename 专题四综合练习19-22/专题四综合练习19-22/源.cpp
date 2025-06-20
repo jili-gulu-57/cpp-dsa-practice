@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<iostream>
 #include<vector>
+#include<string>
 using namespace std;
 
 //77.组合（已通过）
@@ -132,14 +133,51 @@ using namespace std;
 //    }
 //};
 
-int b;
-int c = 10;
+
+//784.字母大小写全排列（已通过）
+class Solution {
+public:
+    vector<string> ans;
+    string path;
+    vector<string> letterCasePermutation(string s) {
+        dfs(s, 0);
+        return ans;
+    }
+    void dfs(string& s, int pos)
+    {
+        if (pos == s.size())
+        {
+            ans.push_back(path);
+            return;
+        }
+
+
+        path.push_back(s[pos]);
+        dfs(s, pos + 1);
+        path.pop_back();
+
+        if (isalpha(s[pos]))
+        {
+            char tmp = change(s[pos]);
+            path.push_back(tmp);
+            dfs(s, pos + 1);
+            path.pop_back();
+        }
+
+    }
+    char change(char ch)
+    {
+        if (isupper(ch))
+            return ch + 32;
+        else
+            return ch - 32;
+    }
+};
+
 int main()
 {
-	int a = 10;
-	printf("%p\n", main);
-	printf("a: %p\n", &a);
-	printf("b: %p\n", &b);
-	printf("c: %p\n", &c);
-	return 0;
+    string ss = "3z4";
+    Solution s;
+    s.letterCasePermutation(ss);
+    return 0;
 }
