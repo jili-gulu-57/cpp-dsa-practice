@@ -34,6 +34,14 @@ void test04()
 	Print(arr, sizeof(arr) / sizeof(int));
 }
 
+//≤‚ ‘÷±Ω”—°‘Ò≈≈–Ú
+void test05()
+{
+	int arr[] = { 9,8,7,6,5,4,3,2,1,0,-1 };
+	SelectSort(arr, sizeof(arr) / sizeof(int));
+	Print(arr, sizeof(arr) / sizeof(int));
+}
+
 //∂‘±»∏˜÷÷≈≈–Ú
 void testsort()
 {
@@ -68,9 +76,19 @@ void testsort()
 	ShellSort(a3, N);
 	int end3 = clock();
 
+	int begin4 = clock();
+	HeapSort(a4, N);
+	int end4 = clock();
+
+	int begin5 = clock();
+	SelectSort(a5, N);
+	int end5 = clock();
+
 	printf("√∞≈›≈≈–Ú£∫%d\n", end1 - begin1);
 	printf("≤Â»Î≈≈–Ú£∫%d\n", end2 - begin2);
 	printf("œ£∂˚≈≈–Ú£∫%d\n", end3 - begin3);
+	printf("∂—≈≈–Ú£∫%d\n", end4 - begin4);
+	printf("÷±Ω”—°‘Ò≈≈–Ú£∫%d\n", end5 - begin5);
 
 }
 
@@ -79,7 +97,8 @@ int main()
 	//test01();
 	//test02();
 	//test03();
-	test04();
+	//test04();
+	test05();
 	//testsort();
 	return 0;
 }

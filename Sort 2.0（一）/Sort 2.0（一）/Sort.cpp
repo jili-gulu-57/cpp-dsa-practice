@@ -67,6 +67,7 @@ void InsertSort(int* arr,int size)
 }
 
 //希尔排序（直接插入排序优化版）
+//时间复杂度O(N^1.3)
 //第一步：预排序 第二步：直接插入排序
 void ShellSort(int* arr, int size)
 {
@@ -96,21 +97,22 @@ void ShellSort(int* arr, int size)
 
 
 //堆排序
+//时间复杂度取决于gap，范围是O(N*logN)~O(n^1.5)
 //满足除根结点外，左、右子树都是小/大堆，才能使用向下调整算法
 void HeapSort(int* arr, int size)
 {
 	//先建堆
 	//建堆有两种方法：
-	//①：逐个插入数据，每个新数据插入时，使用向上调整算法建堆，时间复杂度为O(nlogn)
-	//②：所有数据插入完后，从最后一个非叶子结点开始向下调整建堆，时间复杂度为O(n)
+	//①：逐个插入数据，每个新数据插入时，使用向上调整算法建堆
+	//②：所有数据插入完后，从最后一个非叶子结点开始向下调整建堆
 
-	//方法①建堆
+	//方法①建堆，时间复杂度为O(nlogn)
 	//for (int i = 0; i < size; i++)
 	//{
 	//	AdjustUp(arr, i);
 	//}
 
-	//方法②建堆
+	//方法②建堆，时间复杂度为O(n)
 	for (int i = (size - 1 - 1) / 2; i >= 0; i--)
 	{
 		AdjustDown(arr, i, size);
@@ -123,5 +125,28 @@ void HeapSort(int* arr, int size)
 	{
 		Swap(&arr[0], &arr[end]);
 		AdjustDown(arr, 0, end--);
+	}
+}
+
+//直接选择排序（优化版）
+void SelectSort(int* arr, int size)
+{
+	int begin = 0, end = size - 1;
+	while (begin < end)
+	{
+		int min = begin, max = begin;
+		for (int i = begin; i <= end; i++)
+		{
+			if (arr[i] > arr[max])
+				max = i;
+			if (arr[i] < arr[min])
+				min = i;
+		}
+		if (max == begin)
+			max = min;
+		Swap(&arr[begin], &arr[min]);
+		Swap(&arr[end], &arr[max]);
+		begin++;
+		end--;
 	}
 }

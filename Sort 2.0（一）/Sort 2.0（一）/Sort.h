@@ -23,3 +23,6 @@ void ShellSort(int* arr, int size);
 
 //∂—≈≈–Ú
 void HeapSort(int* arr, int size);
+
+//÷±Ω”—°‘Ò≈≈–Ú
+void SelectSort(int* arr, int size);
