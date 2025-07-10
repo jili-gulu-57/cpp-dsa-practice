@@ -14,3 +14,7 @@ void InsertSort(int* arr, int size);
 
 //¿ìÅÅ£¨ÍÚ¿Ó·¨£©
 void QuickSort(int* arr, int left, int right);
+
+//¹é²¢ÅÅĞò
+void MergeSort(int* arr, int n);
+void _MergeSort(int* arr, int left, int right);

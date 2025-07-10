@@ -115,3 +115,15 @@ void QuickSort(int* arr, int left, int right)
 	else
 		InsertSort(arr + pivot + 1, right - pivot);
 }
+
+//πÈ≤¢≈≈–Ú
+void _MergeSort(int* arr, int left, int right)
+{
+	if (left == right)
+		return;
+}
+
+void MergeSort(int* arr, int n)
+{
+	
+}
