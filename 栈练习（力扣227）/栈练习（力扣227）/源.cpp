@@ -5,7 +5,7 @@
 using namespace std;
 
 
-//227.基本计算器Ⅱ
+//227.基本计算器Ⅱ（已通过）
 //表达式求值，基本思路都是用栈模拟
 class Solution {
 public:
@@ -15,6 +15,8 @@ public:
         int num = 0;
         for (int i=0;i<s.size();i++)
         {
+            if (s[i] == ' ')
+                continue;
             if (s[i] >= '0' && s[i] <= '9')
             {
                 while (s[i] >= '0' && s[i] <= '9')
@@ -22,6 +24,7 @@ public:
                     num = num * 10 + (s[i] - '0');
                     i++;
                 }
+                i--;
                 if (op == '+')
                     st.push(num);
                 else if (op == '-')
@@ -61,7 +64,7 @@ public:
 
 int main()
 {
-    string s = "3+2*2";
+    string s = " 3/2 ";
     Solution ss;
     ss.calculate(s);
     return 0;
