@@ -124,6 +124,6 @@ void _MergeSort(int* arr, int left, int right)
 }
 
 void MergeSort(int* arr, int n)
-{
+{7n     
 	
 }
