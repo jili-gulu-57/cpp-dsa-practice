@@ -44,7 +44,7 @@ public:
         return ans->next;
     }
 };
-//解法三：分治递归合并
+//解法三：分治递归合并（已通过）
 class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
@@ -68,6 +68,34 @@ public:
             return l2;
         if (l2 == nullptr)
             return l1;
-
+        ListNode head;
+        ListNode* cur1 = l1, * cur2 = l2, * prev = &head;
+        head.next = nullptr;
+        while (cur1 && cur2)
+        {
+            if (cur1->val <= cur2->val)
+            {
+                prev->next = cur1;
+                prev = prev->next;
+                cur1 = cur1->next;
+            }
+            else
+            {
+                prev->next = cur2;
+                prev = prev->next;
+                cur2 = cur2->next;
+            }
+        }
+        while (cur1)
+        {
+            prev = prev->next = cur1;
+            cur1 = cur1->next;
+        }
+        while (cur2)
+        {
+            prev = prev->next = cur2;
+            cur2 = cur2->next;
+        }
+        return head.next;
     }
 };
