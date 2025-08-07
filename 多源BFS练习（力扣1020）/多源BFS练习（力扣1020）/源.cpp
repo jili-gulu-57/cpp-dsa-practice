@@ -3,7 +3,7 @@
 #include<queue>
 using namespace std;
 
-//1020.飞地的数量
+//1020.飞地的数量（已通过）
 //正难则反，从边界开始搜索，将可以遍历到的1加入
 class Solution {
 public:
@@ -16,16 +16,28 @@ public:
         for (int i = 0; i < m; i++)
         {
             if (grid[i][0] == 1)
+            {
                 q.push({ i,0 });
+                vis[i][0] = true;
+            }
             if (grid[i][n - 1] == 1)
-                q.push({ i,n - 1 });
+            {
+                q.push({ i,n - 1 }); 
+                vis[i][n - 1] = true;
+            }
         }
         for (int i = 0; i < n; i++)
         {
             if (grid[0][i] == 1)
+            {
                 q.push({ 0,i });
+                vis[0][i] = true;
+            }
             if (grid[m - 1][i] == 1)
+            {
                 q.push({ m - 1,i });
+                vis[m - 1][i] = true;
+            }
         }
         while (q.size())
         {
@@ -38,10 +50,15 @@ public:
                 if (x >= 0 && x < m && y >= 0 && y < n && grid[x][y] == 1 && !vis[x][y])
                 {
                     vis[x][y] = true;
-                    ans++;
                     q.push({ x,y });
                 }
             }
+        }
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+                if (grid[i][j] == 1 && !vis[i][j])
+                    ans++;
         }
         return ans;
     }
@@ -51,6 +68,6 @@ int main()
 {
     vector<vector<int>> grid = { {0,0,0,0},{1,0,1,0},{0,1,1,0},{0,0,0,0} };
     Solution s;
-    s.numEnclaves(grid);
+    cout<<s.numEnclaves(grid);
     return 0;
 }
