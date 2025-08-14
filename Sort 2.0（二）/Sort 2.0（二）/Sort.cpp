@@ -44,30 +44,51 @@ int GetMidIndex(int* arr, int left, int right)
 
 //直接插入排序
 //时间复杂度O(n^2)
+//void InsertSort(int* arr, int size)
+//{
+//	for (int i = 0; i < size - 1; i++)
+//	{
+//		//[0,end]区间为有序区间，依次将无序区间的元素插入到有序区间
+//		int end = i;//有序区间右端下标
+//
+//		int tmp = arr[end + 1];//无序区间第一个元素
+//
+//		while (end >= 0)
+//		{
+//			if (tmp < arr[end])
+//			{
+//				arr[end + 1] = arr[end];
+//				end--;
+//			}
+//			else
+//			{
+//				break;
+//			}
+//		}
+//		arr[end + 1] = tmp;
+//	}
+//}
+
+//直接插入排序（自己写）
 void InsertSort(int* arr, int size)
 {
-	for (int i = 0; i < size - 1; i++)
+	for (int i = 0; i < size-1; i++)
 	{
-		//[0,end]区间为有序区间，依次将无序区间的元素插入到有序区间
-		int end = i;//有序区间右端下标
-
-		int tmp = arr[end + 1];//无序区间第一个元素
-
+		int end = i;	//标记有序区间的最后一个元素下标
+		int begin = end + 1;	//无序区间第一个数下标
+		int num = arr[end + 1];		//无序区间第一个数
 		while (end >= 0)
 		{
-			if (tmp < arr[end])
+			if (num < arr[end])
 			{
-				arr[end + 1] = arr[end];
+				Swap(&arr[begin], &arr[end]);
 				end--;
+				begin--;
 			}
 			else
-			{
 				break;
-			}
 		}
-		arr[end + 1] = tmp;
 	}
-
 }
 
 //快排（挖坑法）

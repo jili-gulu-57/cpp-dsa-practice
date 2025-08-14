@@ -12,6 +12,18 @@ void test01()
 	Print(arr, 10);
 }
 
+
+//测试直接插入排序
+void test02()
+{
+	int arr[] = { 6,7,2,0,4,9,5,8,1,3 ,8,28,19,38};
+	printf("排序前：");
+	Print(arr, sizeof(arr) / sizeof(int));
+	InsertSort(arr, sizeof(arr) / sizeof(int));
+	printf("排序后：");
+	Print(arr, sizeof(arr) / sizeof(int));
+}
+
 //各种排序对比
 void Test()
 {
@@ -51,7 +63,9 @@ void Test()
 
 int main()
 {
+
 	//test01();
-	Test();
+	test02();
+	//Test();
 	return 0;
 }

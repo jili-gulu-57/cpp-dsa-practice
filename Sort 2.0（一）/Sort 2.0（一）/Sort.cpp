@@ -67,18 +67,22 @@ void InsertSort(int* arr,int size)
 }
 
 //希尔排序（直接插入排序优化版）
+//时间复杂度取决于gap，范围是O(N*logN)~O(n^1.5)
 //时间复杂度O(N^1.3)
 //第一步：预排序 第二步：直接插入排序
 void ShellSort(int* arr, int size)
 {
-	int gap = size;
+	int gap = size;		//size为数组大小
 	while (gap > 1)
 	{
-		gap = gap / 3 + 1;
+		gap = gap / 3 + 1;	//确保最后一次gap值为1
+
 		for (int i = 0; i < size - gap; i++)
 		{
 			int end = i;
 			int tmp = arr[end + gap];
+
+			//子序列内排序
 			while (end >= 0)
 			{
 				if (tmp < arr[end])
@@ -92,12 +96,10 @@ void ShellSort(int* arr, int size)
 			arr[end + gap] = tmp;
 		}
 	}
-
 }
 
 
 //堆排序
-//时间复杂度取决于gap，范围是O(N*logN)~O(n^1.5)
 //满足除根结点外，左、右子树都是小/大堆，才能使用向下调整算法
 void HeapSort(int* arr, int size)
 {
@@ -131,10 +133,12 @@ void HeapSort(int* arr, int size)
 //直接选择排序（优化版）
 void SelectSort(int* arr, int size)
 {
+	//每次选择两个数：最大值和最小值，最大值放到数组后面，最小值放到数组前面
 	int begin = 0, end = size - 1;
 	while (begin < end)
 	{
 		int min = begin, max = begin;
+		//遍历未排序的数组，找到最大值和最小值
 		for (int i = begin; i <= end; i++)
 		{
 			if (arr[i] > arr[max])
