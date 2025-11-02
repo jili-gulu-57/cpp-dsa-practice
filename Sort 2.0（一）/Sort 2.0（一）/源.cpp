@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"Sort.h"
-
+#include<iostream>
+using namespace std;
 
 //≤‚ ‘√∞≈›≈≈–Ú
 void test01()
@@ -98,7 +99,8 @@ int main()
 	//test02();
 	//test03();
 	//test04();
-	test05();
+	//test05();
 	//testsort();
+	cout << "hello"<<31;
 	return 0;
 }
