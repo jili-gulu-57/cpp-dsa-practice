@@ -22,6 +22,7 @@ void Print(int* arr, int size)
 //冒泡排序
 void BubbleSort(int* arr, int size)
 {
+	//记录数组是否有序
 	int flag = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -29,10 +30,11 @@ void BubbleSort(int* arr, int size)
 		{
 			if (arr[j] < arr[i])
 			{
-				flag = 1; 
+				flag = 1;	//进入该条件说明存在逆序，则初始数组不是全部有序的
 				Swap(&arr[j], &arr[i]);
 			}
 		}
+		//若一趟排序后flag未被修改，说明初始数组全部有序，则直接break返回
 		if (flag == 0)
 			break;
 	}
