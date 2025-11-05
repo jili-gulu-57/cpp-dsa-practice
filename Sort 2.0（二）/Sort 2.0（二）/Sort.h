@@ -13,7 +13,8 @@ void Print(int* arr, int size);
 void InsertSort(int* arr, int size);
 
 //¿ìÅÅ£¨ÍÚ¿Ó·¨£©
-void QuickSort(int* arr, int left, int right);
+void QuickSort(int* arr, int begin, int end);
+//void QuickSort(int* arr, int n);
 
 //¹é²¢ÅÅĞò
 void MergeSort(int* arr, int n);
