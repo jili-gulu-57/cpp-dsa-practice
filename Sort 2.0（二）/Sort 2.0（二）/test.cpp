@@ -42,9 +42,9 @@ void Test()
 	}
 	
 	//Print(a1, N);
-	printf("\n");
-	QuickSort(a1, 0, N - 1);
-	Print(a1, N);
+	//printf("\n");
+	//QuickSort(a1, 0, N - 1);
+	//Print(a1, N);
 
 	////Print(a2, N);
 	////QuickSort(a2, 0, N - 1);
@@ -56,10 +56,10 @@ void Test()
 	////Print(a3, N);
 	////printf("\n");
 
-	//int begin1 = clock();
-	//QuickSort(a1, 0, N - 1);
-	//int end1 = clock();
-	//printf("快排：%d\n", end1 - begin1);
+	int begin1 = clock();
+	QuickSort(a1, 0, N - 1);
+	int end1 = clock();
+	printf("快排：%d\n", end1 - begin1);
 
 	//int begin2 = clock();
 	//QuickSort(a2, 0, N - 1);
@@ -96,9 +96,9 @@ void test01()
 	//QuickSort(arr, 0, 999999);
 
 	// 构造一个【专门杀】的用例
-	int killer[7] = { 5, 2, 3, 1, 4, 0, 6 };
-	QuickSort(killer, 0, 6);
-	for (int i = 0; i < 7; ++i) printf("%d ", killer[i]);
+	int killer[] = { 8, 1, 5, 2, 4, 3, 6, 9 };
+	QuickSort(killer, 0, sizeof(killer)/sizeof(int)-1);
+	Print(killer, sizeof(killer) / sizeof(int));
 
 	//int arr[] = { 5,1,4,2,3};
 	//int begin = clock();
@@ -112,10 +112,10 @@ void test01()
 int main()
 {
 
-	//test01();
+	test01();
 	//test02();
 	//test03();
-	Test();
+	//Test();
 
 	return 0;
 }
