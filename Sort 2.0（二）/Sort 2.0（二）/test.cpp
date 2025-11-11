@@ -1,8 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"Sort.h"
 
-
-
 //≤‚ ‘÷±Ω”≤Â»Î≈≈–Ú
 void test02()
 {
@@ -109,12 +107,24 @@ void test01()
 
 }
 
+//≤‚ ‘º∆ ˝≈≈–Ú
+void test04()
+{
+	int arr[] = { 103,101,105,106,101,103,107,109,100 };
+	printf("≈≈–Ú«∞£∫");
+	Print(arr, sizeof(arr) / sizeof(int));
+	CountSort(arr, sizeof(arr) / sizeof(int));
+	printf("≈≈–Ú∫Û£∫");
+	Print(arr, sizeof(arr) / sizeof(int));
+}
+
 int main()
 {
 
-	test01();
+	//test01();
 	//test02();
 	//test03();
+	test04();
 	//Test();
 
 	return 0;

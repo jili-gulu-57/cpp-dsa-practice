@@ -249,3 +249,41 @@ void MergeSort(int* arr, int n)
 	_MergeSort(arr, 0, n - 1,tmp);
 	free(tmp);
 }
+
+
+//计数排序（适用于数据差值不是很大的时候）
+void CountSort(int* arr, int n)
+{
+	//遍历一遍数组找出最大值和最小值，确认count数组大小
+	int min = arr[0], max = arr[0], k = 0;
+	for (int i = 1; i < n; i++)
+	{
+		if (arr[i] < min)
+			min = arr[i];
+		if (arr[i] > max)
+			max = arr[i];
+	}
+	k = max - min + 1;
+	int* count = (int*)calloc(k,sizeof(int));	//使用calloc自带初始化
+	//判断是否会申请空间失败
+	if (count == NULL)
+	{
+		perror("calloc fail");
+		return;
+	}
+	//开始统计
+	for (int i = 0; i < n; i++)
+	{
+		count[arr[i] - min]++;
+	}
+	//复原
+	int index = 0;
+	for (int i = 0; i < k; i++)
+	{
+		while (count[i])
+		{
+			arr[index++] = i + min;
+			count[i]--;
+		}
+	}
+}

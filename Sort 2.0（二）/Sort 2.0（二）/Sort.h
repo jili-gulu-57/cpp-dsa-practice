@@ -19,3 +19,6 @@ void QuickSort(int* arr, int begin, int end);
 //¹é²¢ÅÅĞò
 void MergeSort(int* arr, int n);
 void _MergeSort(int* arr, int left, int right);
+
+//¼ÆÊıÅÅĞò
+void CountSort(int* arr, int n);
