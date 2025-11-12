@@ -156,7 +156,7 @@ void QuickSort(int* arr, int begin,int end)
 		}
 		//走到这里说明此时arr[right]的数据小于pivot，填坑
 		arr[left] = arr[right];
-		left++;	
+		//left++;	
 
 		while (left < right&&arr[left] <= pivot)
 		{
@@ -164,7 +164,7 @@ void QuickSort(int* arr, int begin,int end)
 		}
 		//走到这里说明此时arr[left]的数据大于pivot，填坑
 		arr[right] = arr[left];
-		right--;
+		//right--;
 	}
 	//left等于right时，此时的位置就是pivot的位置
 	//left等于right时，此时的位置就是pivot的位置

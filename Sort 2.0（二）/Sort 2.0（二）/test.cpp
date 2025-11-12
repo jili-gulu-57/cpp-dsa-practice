@@ -94,7 +94,7 @@ void test01()
 	//QuickSort(arr, 0, 999999);
 
 	// 构造一个【专门杀】的用例
-	int killer[] = { 8, 1, 5, 2, 4, 3, 6, 9 };
+	int killer[] = { 1,2,3};
 	QuickSort(killer, 0, sizeof(killer)/sizeof(int)-1);
 	Print(killer, sizeof(killer) / sizeof(int));
 
@@ -121,10 +121,10 @@ void test04()
 int main()
 {
 
-	//test01();
+	test01();
 	//test02();
 	//test03();
-	test04();
+	//test04();
 	//Test();
 
 	return 0;
