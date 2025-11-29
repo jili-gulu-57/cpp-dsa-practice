@@ -1,0 +1,62 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+//980.不同路径Ⅲ
+//暴力枚举，找出所有路线，但当step==count时，加入最终结果
+class Solution {
+public:
+    bool vis[20][20] = { 0 };
+    int dx[4] = { 1,-1,0,0 };
+    int dy[4] = { 0,0,1,-1 };
+    int ans = 0;
+    int bx = 0, by = 0, m = 0, n = 0, step = 0;
+    int uniquePathsIII(vector<vector<int>>& grid) {
+        m = grid.size(), n = grid[0].size();
+        //找出起点位置坐标和全走完需要的步数
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (grid[i][j] == 0)
+                    step++;
+                if (grid[i][j] == 1)
+                {
+                    bx = i;
+                    by = j;
+                }
+            }
+        }
+        step ++;
+
+        dfs(grid, bx, by,0);
+        return ans;
+    }
+    void dfs(vector<vector<int>>& grid, int a, int b, int count)
+    {
+        //判断出口条件
+        if (grid[a][b] == 2)
+            if (count == step)
+                ans++;
+        for (int k = 0; k < 4; k++)
+        {
+            int x = dx[k] + a;
+            int y = dy[k] + b;
+            if (x >= 0 && x < m && y >= 0 && y < n && grid[x][y] != -1 && !vis[x][y])
+            {
+                vis[x][y] = true;
+                count++;
+                dfs(grid, x, y, count);
+                vis[x][y] = false;
+            }
+        }
+    }
+};
+
+int main()
+{
+    vector<vector<int>> grid = { {1,0,0,0},{0,0,0,0},{0,0,2,-1} };
+    Solution s;
+    s.uniquePathsIII(grid);
+    return 0;
+}
