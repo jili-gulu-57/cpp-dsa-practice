@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-//980.不同路径Ⅲ
+//980.不同路径Ⅲ（已通过）
 //暴力枚举，找出所有路线，但当step==count时，加入最终结果
 class Solution {
 public:
@@ -24,6 +24,8 @@ public:
                 {
                     bx = i;
                     by = j;
+                    //搜索过程可能会回到1的位置
+                    vis[i][j] = true;
                 }
             }
         }
@@ -38,6 +40,7 @@ public:
         if (grid[a][b] == 2)
             if (count == step)
                 ans++;
+
         for (int k = 0; k < 4; k++)
         {
             int x = dx[k] + a;
@@ -45,8 +48,7 @@ public:
             if (x >= 0 && x < m && y >= 0 && y < n && grid[x][y] != -1 && !vis[x][y])
             {
                 vis[x][y] = true;
-                count++;
-                dfs(grid, x, y, count);
+                dfs(grid, x, y, count+1);//如果在外面进行count++，则count不能正确回退
                 vis[x][y] = false;
             }
         }
@@ -55,7 +57,7 @@ public:
 
 int main()
 {
-    vector<vector<int>> grid = { {1,0,0,0},{0,0,0,0},{0,0,2,-1} };
+    vector<vector<int>> grid = { {0,1},{2,0} };
     Solution s;
     s.uniquePathsIII(grid);
     return 0;
