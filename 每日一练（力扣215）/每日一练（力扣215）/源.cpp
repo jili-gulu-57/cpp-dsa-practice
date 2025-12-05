@@ -25,8 +25,8 @@ public:
 
 int main()
 {
-    int a = 1;
-    char* p = (char*)a;
-    cout << *p;
+    int a = 0x12345678;
+    char* p = (char*)&a;
+    cout << (int)*p;    //结果为16*7+8=120，小端模式
     return 0;
 }
