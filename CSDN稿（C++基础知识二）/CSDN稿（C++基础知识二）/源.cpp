@@ -48,17 +48,53 @@ using namespace std;
 //	return x + y;
 //}
 
-int main()
+//int main()
+//{
+//	//int a = 10;
+//	//int& b = a;	//初始化
+//	//int& c;		//未初始化
+//
+//	int a = 10;
+//	int& b = a;	//b是a的别名
+//	int& c = a;	//c也是a的别名
+//
+//	cout << c;
+//
+//	return 0;
+//}
+
+
+//参数值加10的函数
+//值传递
+//void Func(int x)
+//{
+//	x += 10;
+//}
+
+//引用传递
+//void Func(int& x)
+//{
+//	x += 10;
+//}
+
+	//指针传递
+	/*void Func(int* x)
+	{
+		*x += 10;
+	}*/
+
+int& Func(int x)
 {
-	//int a = 10;
-	//int& b = a;	//初始化
-	//int& c;		//未初始化
-
-	int a = 10;
-	int& b = a;	//b是a的别名
-	int& c = a;	//c也是a的别名
-
-	cout << c;
-
-	return 0;
+	return x += 10;
 }
+
+	int main()
+	{
+		//int a = 1;
+		//cout<<Func(a);	//调用函数
+
+		double b = 1.1;
+		int c = b;
+		cout << c;
+		return 0;
+	}
