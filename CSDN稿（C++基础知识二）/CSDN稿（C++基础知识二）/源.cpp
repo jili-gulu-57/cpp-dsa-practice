@@ -93,8 +93,12 @@ int& Func(int x)
 		//int a = 1;
 		//cout<<Func(a);	//µ÷ÓÃº¯Êı
 
-		double b = 1.1;
-		int c = b;
-		cout << c;
+		//double b = 1.1;
+		//int c = b;
+		//cout << c;
+
+		cout << sizeof(int*) << endl;
+		cout << sizeof(void*) << endl;
+		cout << sizeof(double*) << endl;
 		return 0;
 	}
