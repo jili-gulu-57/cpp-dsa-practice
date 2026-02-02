@@ -1,6 +1,35 @@
 #include<iostream>
 using namespace std;
 
+#define ADD(x,y) x+y
+
+int main()
+{
+	int sum = ADD(1, 2) * 3;
+	//期望的结果是9，但实际上会展开成:sum=1+2*3=7
+
+	cout << sum << endl;
+	return 0;
+}
+
+//int main()
+//{
+//	int sum = ADD(1, 2);//预处理后：int sum=(1+2);
+//
+//	cout << sum << endl;
+//
+//	return 0;
+//}
+
+//#define M 100
+//
+//int main()
+//{
+//	int a = M;
+//	cout << a << endl;
+//}
+
+
 ////定义整型加法
 //int Add1(int x, int y)
 //{
@@ -83,22 +112,22 @@ using namespace std;
 		*x += 10;
 	}*/
 
-int& Func(int x)
-{
-	return x += 10;
-}
-
-	int main()
-	{
-		//int a = 1;
-		//cout<<Func(a);	//调用函数
-
-		//double b = 1.1;
-		//int c = b;
-		//cout << c;
-
-		cout << sizeof(int*) << endl;
-		cout << sizeof(void*) << endl;
-		cout << sizeof(double*) << endl;
-		return 0;
-	}
+//int& Func(int x)
+//{
+//	return x += 10;
+//}
+//
+//	int main()
+//	{
+//		//int a = 1;
+//		//cout<<Func(a);	//调用函数
+//
+//		//double b = 1.1;
+//		//int c = b;
+//		//cout << c;
+//
+//		cout << sizeof(int*) << endl;
+//		cout << sizeof(void*) << endl;
+//		cout << sizeof(double*) << endl;
+//		return 0;
+//	}
