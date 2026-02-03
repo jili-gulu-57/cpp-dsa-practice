@@ -1,16 +1,26 @@
 #include<iostream>
 using namespace std;
 
-#define ADD(x,y) x+y
+inline int ADD(int x, int y);	//声明
+
+inline int ADD(int x, int y)	//定义
+{
+	return x + y;
+}
 
 int main()
 {
 	int sum = ADD(1, 2) * 3;
-	//期望的结果是9，但实际上会展开成:sum=1+2*3=7
+	//期望的结果是9，实际结果也是9
 
 	cout << sum << endl;
 	return 0;
 }
+
+//#define ADD(x,y) x+y
+
+
+
 
 //int main()
 //{
@@ -20,6 +30,7 @@ int main()
 //
 //	return 0;
 //}
+
 
 //#define M 100
 //
