@@ -1,23 +1,24 @@
 #include<iostream>
 using namespace std;
 
-inline int ADD(int x, int y);	//声明
+//inline int ADD(int x, int y);	//声明
+//
+//inline int ADD(int x, int y)	//定义
+//{
+//	return x + y;
+//}
 
-inline int ADD(int x, int y)	//定义
-{
-	return x + y;
-}
+//#define ADD(x,y) ((x)+(y))
+//
+//int main()
+//{
+//	int sum = ADD(1, 2) * 3;
+//	//展开后是（（1）+（2））*3
+//
+//	cout << sum << endl;
+//	return 0;
+//}
 
-int main()
-{
-	int sum = ADD(1, 2) * 3;
-	//期望的结果是9，实际结果也是9
-
-	cout << sum << endl;
-	return 0;
-}
-
-//#define ADD(x,y) x+y
 
 
 
