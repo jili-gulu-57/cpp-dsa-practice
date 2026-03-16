@@ -1,29 +1,62 @@
 #include<iostream>
+#include<string>
+#include<vector>
 using namespace std;
 
-struct Student
+//struct Student
+//{
+//	char name[20];  //姓名
+//	char num[20];   //学号
+//	int age;	    //年龄
+//	char sex;		//性别
+//	
+//	void Study()
+//	{
+//		//……学习
+//	}
+//
+//	void Eat()
+//	{
+//		//……吃饭
+//	}
+//};
+
+class BankAccount
 {
-	char name[20];  //姓名
-	char num[20];   //学号
-	int age;	    //年龄
-	char sex;		//性别
-	
-	void Study()
+public:
+	//构造函数
+	BankAccount()
+	{}
+
+	//存款
+	void deposit()
 	{
-		//……学习
+		cout << "存款..." << endl;
 	}
 
-	void Eat()
+	//取款
+	void withdraw()
 	{
-		//……吃饭
+		cout << "取款..." << endl;
 	}
+
+	//查询余额
+	void ShowBalance()
+	{
+		cout << "余额为：" << _balance << endl;
+	}
+
+	//析构函数
+	~BankAccount()
+	{}
+private:
+	string _name;		//户主姓名
+	vector<int> _number;//账号
+	string _password;   //密码
+	vector<int> _balance;//余额
 };
-
-
 
 int main()
 {
-	Student s1;
-	s1.
 	return 0;
 }
