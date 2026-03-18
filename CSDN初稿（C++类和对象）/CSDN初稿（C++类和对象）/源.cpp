@@ -26,7 +26,8 @@ class BankAccount
 public:
 	//构造函数
 	BankAccount()
-	{}
+	{
+	}
 
 	//存款
 	void deposit()
@@ -48,15 +49,37 @@ public:
 
 	//析构函数
 	~BankAccount()
-	{}
+	{
+	}
 private:
 	string _name;		//户主姓名
 	vector<int> _number;//账号
 	string _password;   //密码
-	vector<int> _balance;//余额
+	int _balance;//余额
+} p1, p2;
+
+class test
+{
+public:
+	test()
+	{ }
+	~test()
+	{ }
+
+private:
+	int a;
+	char b;
+	double c;
 };
 
 int main()
 {
+	cout << "类的大小为：" << sizeof(test) << endl;
+
 	return 0;
 }
+
+BankAccount p3, p4;
+//p1.deposit();
+//p2.ShowBalance();
+//p3.withdraw();
