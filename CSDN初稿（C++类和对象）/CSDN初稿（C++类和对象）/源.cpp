@@ -30,21 +30,23 @@ public:
 	}
 
 	//存款
-	void deposit()
+	void deposit(int money)
 	{
 		cout << "存款..." << endl;
+		_balance += money;
 	}
 
 	//取款
-	void withdraw()
+	void withdraw(int money)
 	{
 		cout << "取款..." << endl;
+		_balance -= money;
 	}
 
 	//查询余额
 	void ShowBalance()
 	{
-		cout << "余额为：" << _balance << endl;
+		cout << "余额为：" << this->_balance << endl;
 	}
 
 	//析构函数
@@ -56,30 +58,49 @@ private:
 	vector<int> _number;//账号
 	string _password;   //密码
 	int _balance;//余额
-} p1, p2;
-
-class test
-{
-public:
-	test()
-	{ }
-	~test()
-	{ }
-
-private:
-	int a;
-	char b;
-	double c;
 };
 
 int main()
 {
-	cout << "类的大小为：" << sizeof(test) << endl;
+	BankAccount p1,p2;
+	p1.deposit(100);
+	p2.deposit(200);
+
+	cout << "p1";
+	p1.ShowBalance();
+
+	cout << "p2";
+	p2.ShowBalance();
 
 	return 0;
 }
 
-BankAccount p3, p4;
-//p1.deposit();
-//p2.ShowBalance();
-//p3.withdraw();
+//class test
+//{
+//public:
+//	test()
+//	{ }
+//	~test()
+//	{ }
+//
+//private:
+//	int a;
+//	char b;
+//	double c;
+//};
+//
+//class test2
+//{
+//public:
+//	test2()
+//	{ }
+//	~test2()
+//	{ }
+//};
+//
+//class test3
+//{
+//
+//};
+	//cout << "类test2的大小为：" << sizeof(test2) << endl;
+	//cout << "类test3的大小为：" << sizeof(test3) << endl;
