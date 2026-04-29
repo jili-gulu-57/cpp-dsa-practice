@@ -27,6 +27,7 @@ public:
 	//构造函数
 	BankAccount()
 	{
+		cout << "构造函数被调用" << endl;
 	}
 
 	//存款
@@ -60,17 +61,38 @@ private:
 	int _balance;//余额
 };
 
+class test
+{
+public:
+	explicit test(int a,int b)
+		:_a(a),
+		_b(b)
+	{
+		cout << a << " " << b << endl;
+	}
+private:
+	int _a = 1;
+	int _b = 2;
+};
+
 int main()
 {
-	BankAccount p1,p2;
-	p1.deposit(100);
-	p2.deposit(200);
+	//BankAccount p1,p2;
+	//p1.deposit(100);
+	//p2.deposit(200);
 
-	cout << "p1";
-	p1.ShowBalance();
+	//cout << "p1";
+	//p1.ShowBalance();
 
-	cout << "p2";
-	p2.ShowBalance();
+	//cout << "p2";
+	//p2.ShowBalance();
+	int num = 1;
+	int _num = 2;
+	int __num = 3;
+	int $num = 4;
+	int num2 = 5;
+	test t = test(6,8);
+	cout << $num << endl;
 
 	return 0;
 }
