@@ -86,14 +86,17 @@ int main()
 
 	//cout << "p2";
 	//p2.ShowBalance();
-	int num = 1;
-	int _num = 2;
-	int __num = 3;
-	int $num = 4;
-	int num2 = 5;
-	test t = test(6,8);
-	cout << $num << endl;
-
+	//int num = 1;
+	//int _num = 2;
+	//int __num = 3;
+	//int $num = 4;
+	//int num2 = 5;
+	//test t = test(6,8);
+	//cout << $num << endl;
+	int num1 = 10;
+	int num2 = 3;
+	cout << num1 / num2 << endl;
+	cout << num1 % num2 << endl;
 	return 0;
 }
 
