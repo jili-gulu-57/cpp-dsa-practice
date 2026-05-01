@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<Windows.h>
 using namespace std;
 
 //struct Student
@@ -75,8 +76,43 @@ private:
 	int _b = 2;
 };
 
+class A
+{
+public:
+	A()
+	{
+		cout << "A的构造函数被调用" << endl;
+	}
+	A(const A& other)
+	{
+		cout << "A的拷贝构造函数被调用" << endl;
+		this->_a = other._a;
+	}
+	~A()
+	{ }
+	A& operator=(const A& other)
+	{
+		cout << "A的赋值运算符被调用" << endl;
+		if (this != &other)
+		{
+			this->_a = other._a;
+		}
+		return *this;
+	}
+private:
+	int _a;
+};
+
 int main()
 {
+
+	//A a;
+	//A b = a;
+	//A b(a);
+	A a, b;
+	b = a;
+	
+
 	//BankAccount p1,p2;
 	//p1.deposit(100);
 	//p2.deposit(200);
@@ -93,10 +129,10 @@ int main()
 	//int num2 = 5;
 	//test t = test(6,8);
 	//cout << $num << endl;
-	int num1 = 10;
-	int num2 = 3;
-	cout << num1 / num2 << endl;
-	cout << num1 % num2 << endl;
+	//int num1 = 10;
+	//int num2 = 3;
+	//cout << num1 / num2 << endl;
+	//cout << num1 % num2 << endl;
 	return 0;
 }
 
