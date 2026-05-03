@@ -87,8 +87,10 @@ TreeNode* buildTree(const vector<int>& nums) {
 
 int main()
 {
-    vector<int> nums = { 1,2,3,4,7,8,9,5,-1,-1,-1,-1,-1,-1 };
+    vector<int> nums = { 1,2,3,4,5,-1,6,7,-1,-1,-1,8 };
     Solution s;
-    s.rightSideView(buildTree(nums));
+    vector<int> ans=s.rightSideView(buildTree(nums));
+    for (int i = 0; i < ans.size(); i++)
+        cout << ans[i] << " ";
     return 0;
 }
