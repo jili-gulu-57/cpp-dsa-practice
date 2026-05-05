@@ -22,119 +22,119 @@ using namespace std;
 //	}
 //};
 
-class BankAccount
-{
-public:
-	//构造函数
-	BankAccount()
-	{
-		cout << "构造函数被调用" << endl;
-	}
-
-	//存款
-	void deposit(int money)
-	{
-		cout << "存款..." << endl;
-		_balance += money;
-	}
-
-	//取款
-	void withdraw(int money)
-	{
-		cout << "取款..." << endl;
-		_balance -= money;
-	}
-
-	//查询余额
-	void ShowBalance()
-	{
-		cout << "余额为：" << this->_balance << endl;
-	}
-
-	//析构函数
-	~BankAccount()
-	{
-	}
-private:
-	string _name;		//户主姓名
-	vector<int> _number;//账号
-	string _password;   //密码
-	int _balance;//余额
-};
-
-class test
-{
-public:
-	explicit test(int a,int b)
-		:_a(a),
-		_b(b)
-	{
-		cout << a << " " << b << endl;
-	}
-private:
-	int _a = 1;
-	int _b = 2;
-};
-
-class A
-{
-public:
-	A()
-	{
-		cout << "A的构造函数被调用" << endl;
-	}
-	A(const A& other)
-	{
-		cout << "A的拷贝构造函数被调用" << endl;
-		this->_a = other._a;
-	}
-	~A()
-	{ }
-	A& operator=(const A& other)
-	{
-		cout << "A的赋值运算符被调用" << endl;
-		if (this != &other)
-		{
-			this->_a = other._a;
-		}
-		return *this;
-	}
-private:
-	int _a;
-};
-
-int main()
-{
-
-	//A a;
-	//A b = a;
-	//A b(a);
-	A a, b;
-	b = a;
-	
-
-	//BankAccount p1,p2;
-	//p1.deposit(100);
-	//p2.deposit(200);
-
-	//cout << "p1";
-	//p1.ShowBalance();
-
-	//cout << "p2";
-	//p2.ShowBalance();
-	//int num = 1;
-	//int _num = 2;
-	//int __num = 3;
-	//int $num = 4;
-	//int num2 = 5;
-	//test t = test(6,8);
-	//cout << $num << endl;
-	//int num1 = 10;
-	//int num2 = 3;
-	//cout << num1 / num2 << endl;
-	//cout << num1 % num2 << endl;
-	return 0;
-}
+//class BankAccount
+//{
+//public:
+//	//构造函数
+//	BankAccount()
+//	{
+//		cout << "构造函数被调用" << endl;
+//	}
+//
+//	//存款
+//	void deposit(int money)
+//	{
+//		cout << "存款..." << endl;
+//		_balance += money;
+//	}
+//
+//	//取款
+//	void withdraw(int money)
+//	{
+//		cout << "取款..." << endl;
+//		_balance -= money;
+//	}
+//
+//	//查询余额
+//	void ShowBalance()
+//	{
+//		cout << "余额为：" << this->_balance << endl;
+//	}
+//
+//	//析构函数
+//	~BankAccount()
+//	{
+//	}
+//private:
+//	string _name;		//户主姓名
+//	vector<int> _number;//账号
+//	string _password;   //密码
+//	int _balance;//余额
+//};
+//
+//class test
+//{
+//public:
+//	explicit test(int a,int b)
+//		:_a(a),
+//		_b(b)
+//	{
+//		cout << a << " " << b << endl;
+//	}
+//private:
+//	int _a = 1;
+//	int _b = 2;
+//};
+//
+//class A
+//{
+//public:
+//	A()
+//	{
+//		cout << "A的构造函数被调用" << endl;
+//	}
+//	A(const A& other)
+//	{
+//		cout << "A的拷贝构造函数被调用" << endl;
+//		this->_a = other._a;
+//	}
+//	~A()
+//	{ }
+//	A& operator=(const A& other)
+//	{
+//		cout << "A的赋值运算符被调用" << endl;
+//		if (this != &other)
+//		{
+//			this->_a = other._a;
+//		}
+//		return *this;
+//	}
+//private:
+//	int _a;
+//};
+//
+//int main()
+//{
+//
+//	//A a;
+//	//A b = a;
+//	//A b(a);
+//	A a, b;
+//	b = a;
+//	
+//
+//	//BankAccount p1,p2;
+//	//p1.deposit(100);
+//	//p2.deposit(200);
+//
+//	//cout << "p1";
+//	//p1.ShowBalance();
+//
+//	//cout << "p2";
+//	//p2.ShowBalance();
+//	//int num = 1;
+//	//int _num = 2;
+//	//int __num = 3;
+//	//int $num = 4;
+//	//int num2 = 5;
+//	//test t = test(6,8);
+//	//cout << $num << endl;
+//	//int num1 = 10;
+//	//int num2 = 3;
+//	//cout << num1 / num2 << endl;
+//	//cout << num1 % num2 << endl;
+//	return 0;
+//}
 
 //class test
 //{
@@ -165,3 +165,30 @@ int main()
 //};
 	//cout << "类test2的大小为：" << sizeof(test2) << endl;
 	//cout << "类test3的大小为：" << sizeof(test3) << endl;
+
+
+//定义一个简单的学生类，只包含姓名和年龄
+class Students
+{
+public:
+	Students(string name,int age)
+	{
+		_name = name;
+		_age = age;
+	}
+	void Show()	//打印成员变量
+	{
+		cout << _name << endl;
+		cout << _age << endl;
+	}
+private:
+	string _name;
+	int _age;
+};
+
+int main()
+{
+	Students s1("张三",18); //定义一个学生对象
+	s1.Show();
+	return 0;
+}
